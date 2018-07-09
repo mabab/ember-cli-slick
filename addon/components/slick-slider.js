@@ -2,6 +2,7 @@ import Component from '@ember/component';
 import layout from '../templates/components/slick-slider';
 import {scheduleOnce} from '@ember/runloop';
 import {on} from '@ember/object/evented';
+import jQuery from 'jquery';
 
 export default Component.extend({
     layout: layout,
@@ -49,11 +50,11 @@ export default Component.extend({
     _initializeSlick: on('didInsertElement', function () {
         let _this = this;
 
-        scheduleOnce('actions', this.$(), function () {
+        scheduleOnce('actions', jQuery(), function () {
             _this.sendAction('slickInit', this[0]);
         });
 
-        let carousel = this.$().slick({
+        let carousel = jQuery().slick({
             accessibility: this.get('accessibility'),
             adaptiveHeight: this.get('adaptiveHeight'),
             autoplay: this.get('autoplay'),
