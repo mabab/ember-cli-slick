@@ -15,7 +15,9 @@ module.exports = {
                     }
                 },
                 public: {
-                    include: ['node_module/slick-carousel/slick/ajax-loader.gif', 'node_module/slick-carousel/slick/fonts/*']
+                    srcDir: 'slick',
+                    destDir: '',
+                    include: ['ajax-loader.gif', 'fonts/*']
                 }
             }
         }
