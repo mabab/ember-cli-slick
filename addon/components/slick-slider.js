@@ -50,11 +50,11 @@ export default Component.extend({
     _initializeSlick: on('didInsertElement', function () {
         let _this = this;
 
-        scheduleOnce('actions', jQuery(), function () {
+        scheduleOnce('actions', jQuery(this.get('element')), function () {
             _this.sendAction('slickInit', this[0]);
         });
 
-        let carousel = jQuery().slick({
+        let carousel = jQuery(this.get('element')).slick({
             accessibility: this.get('accessibility'),
             adaptiveHeight: this.get('adaptiveHeight'),
             autoplay: this.get('autoplay'),
