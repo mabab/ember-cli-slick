@@ -118,7 +118,7 @@ export default Component.extend({
                 _this.sendAction('swiped', slick, direction);
             });
 
-        this.set('carousel');
+        this.set('carousel', carousel);
         return carousel;
     }),
 
