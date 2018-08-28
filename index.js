@@ -10,7 +10,7 @@ module.exports = {
       nodeAssets: {
           'slick-carousel': {
               import: {
-                  include: ['slick/slick.js', 'slick.css', 'slick-theme.css', 'fonts/slick.ttf', 'fonts/slick.svg', 'fonts/slick.eot', 'fonts/slick.woff', 'ajax-loader.gif'],
+                  include: ['slick/slick.js', 'slick/slick.css', 'slick/slick-theme.css', 'slick/fonts/slick.ttf', 'slick/fonts/slick.svg', 'slick/fonts/slick.eot', 'slick/fonts/slick.woff', 'slick/ajax-loader.gif'],
                   processTree(input) {
                       return fastbootTransform(input);
                   }
