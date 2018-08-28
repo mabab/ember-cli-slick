@@ -16,5 +16,10 @@ module.exports = {
                 }
             }
         }
+    },
+
+    included(app, parentAddon) {
+        this._super.included.apply(this, arguments);
     }
+
 };
