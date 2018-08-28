@@ -9,14 +9,11 @@ module.exports = {
         nodeAssets: {
             'slick-carousel': {
                 srcDir: 'slick',
-                vendor: {
-                    include: ['slick.js', 'slick.css', 'slick-theme.css'],
+                import: {
+                    include: ['slick/slick.js', 'slick/slick.css', 'slick/slick-theme.css', 'slick/ajax-loader.gif', 'slick/fonts/*'],
                     processTree(input) {
                         return fastbootTransform(input);
                     }
-                },
-                public: {
-                    include: ['ajax-loader.gif', 'fonts/*']
                 }
             }
         }
