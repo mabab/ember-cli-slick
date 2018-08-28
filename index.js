@@ -8,14 +8,21 @@ module.exports = {
 
   options: {
       nodeAssets: {
-          'slick-carousel': {
-              import: {
-                  include: ['slick/slick.js', 'slick/slick.css', 'slick/slick-theme.css', 'slick/fonts/slick.ttf', 'slick/fonts/slick.svg', 'slick/fonts/slick.eot', 'slick/fonts/slick.woff', 'slick/ajax-loader.gif'],
-                  processTree(input) {
-                      return fastbootTransform(input);
-                  }
-              }
+        'slick-carousel': {
+          vendor: {
+            srcDir: 'slick',
+            destDir: 'slick-carousel',
+            include: ['slick.js', 'slick.css', 'slick-theme.css'],
+            processTree(input) {
+              return fastbootTransform(input);
+            }
+          },
+          public: {
+            srcDir: 'slick',
+            destDir: 'slick-carousel',
+            include: ['ajax-loader.gif', 'fonts/*']
           }
+        }
       }
   }
 };
