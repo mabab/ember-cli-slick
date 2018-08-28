@@ -9,7 +9,13 @@ module.exports = {
         nodeAssets: {
             'slick-carousel': {
                 import: {
-                    include: ['slick/slick.js', 'slick/slick.css', 'slick/slick-theme.css'],
+                    include: ['slick/slick.js', 'slick/slick.css', 'slick/slick-theme.css',
+                        'slick/ajax-loader.gif',
+                        'slick/slick.eot',
+                        'slick/slick.svg',
+                        'slick/slick.ttf',
+                        'slick/slick.woff'
+                    ],
                     processTree(input) {
                         return fastbootTransform(input);
                     }
@@ -19,12 +25,6 @@ module.exports = {
     },
 
     included(app, parentAddon) {
-        app.import('node_modules/slick-carousel/slick/ajax-loader.gif');
-        app.import('node_modules/slick-carousel/slick/slick.eot');
-        app.import('node_modules/slick-carousel/slick/slick.svg');
-        app.import('node_modules/slick-carousel/slick/slick.ttf');
-        app.import('node_modules/slick-carousel/slick/slick.woff');
-
         this._super.included.apply(this, arguments);
     }
 
