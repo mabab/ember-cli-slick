@@ -4,25 +4,19 @@ const fastbootTransform = require('fastboot-transform');
 
 
 module.exports = {
-  name: 'ember-cli-slick',
+    name: 'ember-cli-slick',
 
-  options: {
-      nodeAssets: {
+    nodeAssets: {
         'slick-carousel': {
-          vendor: {
-            srcDir: 'slick',
-            destDir: 'slick-carousel',
-            include: ['slick.js', 'slick.css', 'slick-theme.css'],
-            processTree(input) {
-              return fastbootTransform(input);
+            vendor: {
+                include: ['slick/slick.js', 'slick/slick.css', 'slick/slick-theme.css'],
+                processTree(input) {
+                    return fastbootTransform(input);
+                }
+            },
+            public: {
+                include: ['slick/ajax-loader.gif', 'slick/fonts/*']
             }
-          },
-          public: {
-            srcDir: 'slick',
-            destDir: 'slick-carousel',
-            include: ['ajax-loader.gif', 'fonts/*']
-          }
         }
-      }
-  }
+    }
 };
