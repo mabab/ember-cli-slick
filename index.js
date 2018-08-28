@@ -13,13 +13,18 @@ module.exports = {
                     processTree(input) {
                         return fastbootTransform(input);
                     }
-                },
-                public: ['slick/ajax-loader.gif', 'slick/fonts/*']
+                }
             }
         }
     },
 
     included(app, parentAddon) {
+        app.import('node_modules/slick-carousel/slick/ajax-loader.gif');
+        app.import('node_modules/slick-carousel/slick/slick.eot');
+        app.import('node_modules/slick-carousel/slick/slick.svg');
+        app.import('node_modules/slick-carousel/slick/slick.ttf');
+        app.import('node_modules/slick-carousel/slick/slick.woff');
+
         this._super.included.apply(this, arguments);
     }
 
