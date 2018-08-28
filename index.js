@@ -16,7 +16,7 @@ module.exports = {
                 },
                 public: {
                     srcDir: 'slick',
-                    destDir: '',
+                    destDir: 'assets',
                     include: ['ajax-loader.gif', 'fonts/*']
                 }
             }
