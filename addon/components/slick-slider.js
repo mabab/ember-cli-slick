@@ -100,22 +100,34 @@ export default Component.extend({
             rtl: this.get('rtl')
         })
             .on('afterChange', function ($event, slick, currentSlide) {
-                _this.sendAction('afterChange', slick, currentSlide);
+                if (_this.afterChange){
+                    _this.afterChange(slick, currentSlide);
+                }
             })
             .on('beforeChange', function ($event, slick, currentSlide, nextSlide) {
-                _this.sendAction('beforeChange', slick, currentSlide, nextSlide);
+                if (_this.beforeChange){
+                    _this.beforeChange(slick, currentSlide, nextSlide);
+                }
             })
             .on('edge', function ($event, slick, direction) {
-                _this.sendAction('edge', slick, direction);
+                if (_this.edge){
+                    _this.edge(slick, direction);
+                }
             })
             .on('reInit', function ($event, slick) {
-                _this.sendAction('reInit', slick);
+                if (_this.reInit){
+                    _this.reInit(slick);
+                }
             })
             .on('setPosition', function ($event, slick) {
-                _this.sendAction('setPosition', slick);
+                if (_this.setPosition){
+                    _this.setPosition(slick);
+                }
             })
             .on('swipe', function ($event, slick, direction) {
-                _this.sendAction('swiped', slick, direction);
+                if (_this.swiped){
+                    _this.swiped(slick, direction);
+                }
             });
 
         this.set('carousel', carousel);
