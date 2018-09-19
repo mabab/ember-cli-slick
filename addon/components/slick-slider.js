@@ -51,7 +51,9 @@ export default Component.extend({
         let _this = this;
 
         scheduleOnce('actions', jQuery(this.get('element')), function () {
-            _this.sendAction('slickInit', this[0]);
+            if (_this.slickInit){
+                _this.slickInit(this[0]);
+            }
         });
 
         let carousel = jQuery(this.get('element')).slick({
