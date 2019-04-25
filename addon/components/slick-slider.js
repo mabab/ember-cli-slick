@@ -3,6 +3,7 @@ import layout from '../templates/components/slick-slider';
 import {scheduleOnce} from '@ember/runloop';
 import {on} from '@ember/object/evented';
 import jQuery from 'jquery';
+import {set} from '@ember/object';
 
 export default Component.extend({
     layout: layout,
@@ -132,7 +133,7 @@ export default Component.extend({
                 }
             });
 
-        this.set('carousel', carousel);
+        set(this, 'carousel', carousel);
         return carousel;
     }),
 
