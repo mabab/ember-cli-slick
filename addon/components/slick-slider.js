@@ -2,7 +2,7 @@ import Component from '@ember/component';
 import layout from '../templates/components/slick-slider';
 import {scheduleOnce} from '@ember/runloop';
 import {on} from '@ember/object/evented';
-import jQuery from 'jquery';
+import jQuery from '@ember/jquery';
 import {set} from '@ember/object';
 
 export default Component.extend({
